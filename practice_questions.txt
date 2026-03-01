@@ -1,0 +1,294 @@
+1. Find First Non-Repeating Character
+
+Question:
+Given a string:
+
+text = "automation"
+
+Print the first character that does not repeat.
+
+Concepts tested:
+
+* Dictionary frequency
+* Loop order preservation
+* Early exit logic
+
+---
+
+2. Check If Two Lists Have Common Elements
+
+Question:
+
+list1 = [1, 2, 3, 4]
+list2 = [5, 6, 3, 8]
+
+Return True if they share at least one common element, else False.
+
+Concepts tested:
+
+* Loop + membership
+* Set intersection thinking
+* Optimization discussion (O(n^2) vs O(n))
+
+---
+
+3. Group Logs by Level
+
+Question:
+
+logs = [
+"INFO: Server started",
+"ERROR: DB failed",
+"INFO: User logged in",
+"WARNING: Disk space low"
+]
+
+Group them into a dictionary like:
+
+{
+"INFO": [...],
+"ERROR": [...],
+"WARNING": [...]
+}
+
+Concepts tested:
+
+* String split
+* Dictionary with list values
+* Data structuring
+
+---
+
+4. Validate Configuration Dictionary
+
+Question:
+
+config = {
+"host": "localhost",
+"port": 8080,
+"debug": True
+}
+
+Write a function that checks:
+
+* host must be string
+* port must be int
+* debug must be boolean
+
+Return True if valid else False.
+
+Concepts tested:
+
+* isinstance()
+* Defensive programming
+* Real-world validation logic
+
+---
+
+5. Flatten Only One Level of Nested List
+
+Question:
+
+data = [1, 2, [3, 4], 5]
+
+Flatten only one level (no recursion).
+
+Expected:
+[1, 2, 3, 4, 5]
+
+Concepts tested:
+
+* Type checking
+* Loop
+* extend() vs append()
+
+---
+
+6. Check If Dictionary Values Are Unique
+
+Question:
+
+data = {"a": 1, "b": 2, "c": 1}
+
+Return False because values are not unique.
+
+Concepts tested:
+
+* values()
+* set comparison
+* Length comparison logic
+
+---
+
+7. Find All Indices of a Target Element
+
+Question:
+
+nums = [10, 20, 10, 30, 10]
+
+Find all indices of 10.
+
+Expected:
+[0, 2, 4]
+
+Concepts tested:
+
+* enumerate()
+* Index tracking
+* List building
+
+---
+
+8. Merge Two Dictionaries (Without update())
+
+Question:
+
+d1 = {"a": 1, "b": 2}
+d2 = {"b": 3, "c": 4}
+
+Merge manually.
+If key exists in both, keep value from d2.
+
+Concepts tested:
+
+* Dictionary iteration
+* Key overwrite logic
+* Understanding how merging works internally
+
+---
+
+9. Check If String Is Rotation of Another
+
+Question:
+
+s1 = "abcd"
+s2 = "cdab"
+
+Return True.
+
+Concepts tested:
+
+* String logic
+* Pattern recognition
+* Interview-style thinking
+
+---
+
+10. Simulate Retry Logic
+
+Question:
+Write a function that:
+
+* Tries an operation up to 3 times
+* Stops early if success
+* Prints attempt number
+
+You can simulate failure with:
+
+import random
+random.choice([True, False])
+
+Concepts tested:
+
+* Loop control
+* Break
+* Retry pattern used in DevOps
+
+---
+
+11. Parse Simple Key-Value Log Format
+
+Question:
+
+logs = [
+"user=admin status=success",
+"user=guest status=failed"
+]
+
+Convert into:
+
+[
+{"user": "admin", "status": "success"},
+{"user": "guest", "status": "failed"}
+]
+
+Concepts tested:
+
+* split()
+* Dictionary construction
+* Real log parsing thinking
+
+---
+
+12. Check Balanced Parentheses
+
+Question:
+
+s = "(())()"
+
+Return True if balanced, else False.
+
+Concepts tested:
+
+* Counter logic
+* Stack concept (basic introduction)
+* Interview classic
+
+---
+
+13. Count Consecutive Failures
+
+Question:
+
+statuses = ["success", "failed", "failed", "success", "failed"]
+
+Find maximum consecutive "failed".
+
+Concepts tested:
+
+* Running counter
+* Reset logic
+* Monitoring mindset
+
+---
+
+14. Sort List of Dictionaries by Key
+
+Question:
+
+data = [
+{"name": "service1", "priority": 3},
+{"name": "service2", "priority": 1},
+{"name": "service3", "priority": 2}
+]
+
+Sort by priority.
+
+Concepts tested:
+
+* sorted()
+* key parameter
+* lambda basics
+
+---
+
+15. Detect Environment from Variables
+
+Question:
+
+env = {
+"ENV": "production",
+"DEBUG": "False"
+}
+
+Write logic:
+
+* If ENV == production and DEBUG == True → print configuration error.
+
+Concepts tested:
+
+* Dictionary access
+* Logical conditions
+* Configuration sanity checks
+
+---
