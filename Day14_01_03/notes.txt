@@ -1,0 +1,224 @@
+"""
+Python Environment & Package Management
+Topic:
+1. pip
+2. requirements.txt
+3. Environment Variables
+4. Virtual Environment (venv)
+"""
+
+# =====================================================
+# WHAT IS PIP?
+# =====================================================
+
+# pip → Package Installer for Python
+# Used to install external libraries.
+
+# Example:
+# pip install numpy
+# pip install boto3
+
+# View installed packages:
+# pip list
+
+# Uninstall package:
+# pip uninstall numpy
+
+# Show package details:
+# pip show numpy
+
+
+# =====================================================
+# REQUIREMENTS.TXT
+# =====================================================
+
+# requirements.txt → File that contains
+# all required dependencies for a project.
+
+# Example requirements.txt:
+# numpy==1.24.2
+# boto3==1.34.0
+# requests==2.31.0
+
+# Install all packages from file:
+# pip install -r requirements.txt
+
+# Generate requirements file:
+# pip freeze > requirements.txt
+
+
+"""
+Python - Environment Variables
+Topic:
+1. Setting environment variables in terminal
+2. Using .env file
+"""
+
+# =====================================================
+# WHAT ARE ENVIRONMENT VARIABLES?
+# =====================================================
+
+# Environment variables store sensitive data:
+# - API Keys
+# - Database passwords
+# - Secret tokens
+# - Cloud credentials
+
+# NEVER hardcode secrets in source code.
+
+
+# =====================================================
+# SETTING ENV VARIABLES FROM TERMINAL
+# =====================================================
+
+# ------------------------------
+# Windows (PowerShell)
+# ------------------------------
+
+# setx API_KEY "123456"
+
+# After setting, restart terminal.
+
+
+# ------------------------------
+# Linux / Mac
+# ------------------------------
+
+# export API_KEY="123456"
+
+# Temporary (only for that session)
+
+
+# =====================================================
+# ACCESSING ENV VARIABLES IN PYTHON
+# =====================================================
+
+import os
+
+api_key = os.getenv("API_KEY")
+print(api_key)
+
+# If variable not found → returns None
+
+
+# =====================================================
+# USING .env FILE (Recommended for Projects)
+# =====================================================
+
+# Step 1: Install python-dotenv
+
+# pip install python-dotenv
+
+
+# Step 2: Create a file named .env
+
+# Example .env file content:
+
+# API_KEY=123456
+# DB_PASSWORD=supersecret
+# DEBUG=True
+
+
+# Step 3: Load .env in Python
+
+# from dotenv import load_dotenv
+# import os
+#
+# load_dotenv()   # Loads variables from .env file
+#
+# api_key = os.getenv("API_KEY")
+# print(api_key)
+
+
+# =====================================================
+# IMPORTANT RULES
+# =====================================================
+
+# 1. Add .env to .gitignore
+# 2. Never push .env to GitHub
+# 3. Keep secrets outside source code
+# 4. Use different .env for dev and production
+
+
+# =====================================================
+# COMMON PROJECT STRUCTURE
+# =====================================================
+
+# project/
+#   ├── main.py
+#   ├── .env
+#   ├── requirements.txt
+#   └── venv/
+
+
+# 1. Environment variables store secrets.
+# 2. Terminal env is session-based.
+# 3. .env file is project-based.
+# 4. Never hardcode credentials.
+# 5. Always add .env to .gitignore.
+
+
+
+# =====================================================
+# VIRTUAL ENVIRONMENT (venv)
+# =====================================================
+
+# Problem:
+# Project A → numpy version 1.20
+# Project B → numpy version 2.12
+
+# Installing globally creates conflicts.
+
+# Solution → Virtual Environment
+
+# Create virtual environment:
+# python -m venv myenv
+
+# Activate (Windows):
+# myenv\Scripts\activate
+
+# Activate (Mac/Linux):
+# source myenv/bin/activate
+
+# After activation:
+# pip install numpy
+
+# Now numpy is installed ONLY inside this project.
+
+# Deactivate environment:
+# deactivate
+
+
+# =====================================================
+# WHY VIRTUAL ENV IS IMPORTANT?
+# =====================================================
+
+# 1. Avoid version conflicts
+# 2. Isolate project dependencies
+# 3. Professional project setup
+# 4. Required for real-world development
+
+
+# =====================================================
+# COMMON WORKFLOW
+# =====================================================
+
+# 1. Create project folder
+# 2. python -m venv venv
+# 3. Activate venv
+# 4. pip install required packages
+# 5. pip freeze > requirements.txt
+# 6. Share project
+# 7. Other person runs:
+#    pip install -r requirements.txt
+
+
+# =====================================================
+# IMPORTANT POINTS
+# =====================================================
+
+# 1. pip installs Python packages.
+# 2. requirements.txt stores dependencies.
+# 3. Environment variables store secrets.
+# 4. Virtual environments prevent version conflicts.
+# 5. Every professional project uses venv.
